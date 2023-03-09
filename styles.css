@@ -79,7 +79,7 @@ section {
   flex-wrap: wrap;
   align-items: center;
   gap: 24px;
-  margin: 120px 0 72px;
+  margin: 120px auto 72px;
 }
 
 .hero p{
