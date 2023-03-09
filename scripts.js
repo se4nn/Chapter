@@ -1,61 +1,3 @@
-// Get form inputs
-let calculatorForm = $("#calculator-form");
-let productTypeInput = $("input-product-type");
-let rrpInput = $("#input-rrp");
-let lifespanInput = $("#input-lifespan");
-let refurbishmentInput = $("#input-refurbishment")  
-let rentalPeriodInput = $("#input-rental-period");
-
-// Get summary outputs
-let totalReturnOutput = $("#output-total-return");
-let refurbishmentOutput = $("#output-refurbishment");
-let insuranceOutput = $("#output-insurance");
-let chapterFee = $("#output-chapter-fee");
-let monthlyCostOutput = $("#output-monthly-cost");
-let rentalPeriodOutput = $("#rental-period");
-
-// Handle rental period change
-rentalPeriodInput.on("input", function() {
-    let rentalPeriodInputValue = rentalPeriodInput.val();
-  console.log(rentalPeriodInputValue);
-  rentalPeriodOutput.text("For " + rentalPeriodInputValue + " months");
-});
-
-// Handle productTypeChange - not currently working, should be select
-productTypeInput.on("input", function() {
-
-  let productTypeInputValue = productTypeInput.is(':checked');
-  console.log(productTypeInputValue)
-
-  });
-
-// Handle form submission
-calculatorForm.submit(function( event ) {
-  event.preventDefault();
-  
-  let rrpInputValue = rrpInput.val();
-  let lifespanInputValue = lifespanInput.val() * 12;
-  let rentalPeriodInputValue = rentalPeriodInput.val();
-  
-  console.log(rrpInputValue, lifespanInputValue, rentalPeriodInputValue)
-  
-  // Calculate the depreciation and update the summary
-  calculateDepreciation(rrpInputValue, 0, lifespanInputValue, 0, rentalPeriodInputValue);
-  
-  // Do not submit the form
-  return false;
-});
-
-// Handle summary update
-const handleSummaryUpdate = (periodDepreciationValue = 10, totalRefurbishmentCostValue = 20, totalInsuranceCostValue = 30, totalChapterFeeValue = 40, monthlyRentalValue = 100) => {
-    console.log(periodDepreciationValue, totalRefurbishmentCostValue, totalInsuranceCostValue, totalChapterFeeValue, monthlyRentalValue);
-  totalReturnOutput.text("£" + periodDepreciationValue);
-  refurbishmentOutput.text("£" + totalRefurbishmentCostValue);
-  insuranceOutput.text("£" + totalInsuranceCostValue);
-  chapterFee.text("£" + totalChapterFeeValue);
-  monthlyCostOutput.text("£" + monthlyRentalValue);
-}
-
 const calculateDepreciation = (cost=10000, salvage=0, months=60, startPeriod=0, endPeriod=6) => {
 
     // Chapter costs
@@ -122,4 +64,62 @@ const calculateDepreciation = (cost=10000, salvage=0, months=60, startPeriod=0, 
     
     handleSummaryUpdate();
 
+}
+
+// Get form inputs
+let calculatorForm = $("#calculator-form");
+let productTypeInput = $("input-product-type");
+let rrpInput = $("#input-rrp");
+let lifespanInput = $("#input-lifespan");
+let refurbishmentInput = $("#input-refurbishment")  
+let rentalPeriodInput = $("#input-rental-period");
+
+// Get summary outputs
+let totalReturnOutput = $("#output-total-return");
+let refurbishmentOutput = $("#output-refurbishment");
+let insuranceOutput = $("#output-insurance");
+let chapterFee = $("#output-chapter-fee");
+let monthlyCostOutput = $("#output-monthly-cost");
+let rentalPeriodOutput = $("#rental-period");
+
+// Handle rental period change
+rentalPeriodInput.on("input", function() {
+    let rentalPeriodInputValue = rentalPeriodInput.val();
+  console.log(rentalPeriodInputValue);
+  rentalPeriodOutput.text("For " + rentalPeriodInputValue + " months");
+});
+
+// Handle productTypeChange - not currently working, should be select
+productTypeInput.on("input", function() {
+
+  let productTypeInputValue = productTypeInput.is(':checked');
+  console.log(productTypeInputValue)
+
+  });
+
+// Handle form submission
+calculatorForm.submit(function( event ) {
+  event.preventDefault();
+  
+  let rrpInputValue = rrpInput.val();
+  let lifespanInputValue = lifespanInput.val() * 12;
+  let rentalPeriodInputValue = rentalPeriodInput.val();
+  
+  console.log(rrpInputValue, lifespanInputValue, rentalPeriodInputValue)
+  
+  // Calculate the depreciation and update the summary
+  calculateDepreciation(rrpInputValue, 0, lifespanInputValue, 0, rentalPeriodInputValue);
+  
+  // Do not submit the form
+  return false;
+});
+
+// Handle summary update
+const handleSummaryUpdate = (periodDepreciationValue = 10, totalRefurbishmentCostValue = 20, totalInsuranceCostValue = 30, totalChapterFeeValue = 40, monthlyRentalValue = 100) => {
+    console.log(periodDepreciationValue, totalRefurbishmentCostValue, totalInsuranceCostValue, totalChapterFeeValue, monthlyRentalValue);
+  totalReturnOutput.text("£" + periodDepreciationValue);
+  refurbishmentOutput.text("£" + totalRefurbishmentCostValue);
+  insuranceOutput.text("£" + totalInsuranceCostValue);
+  chapterFee.text("£" + totalChapterFeeValue);
+  monthlyCostOutput.text("£" + monthlyRentalValue);
 }
