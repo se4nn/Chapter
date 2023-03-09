@@ -16,8 +16,8 @@ h1 {
   font-family: 'Ivy Journal';
   font-style: normal;
   font-weight: 400;
-  font-size: 117px;
-  line-height: 120px;
+  font-size: clamp(10vw, 47px, 117px);
+  line-height: 110%;
   text-align: center;
   letter-spacing: -0.04em;
   color: #141313;
@@ -25,8 +25,8 @@ h1 {
 
 h2 {
   font-weight: 500;
-  font-size: 45px;
-  line-height: 64px;
+  font-size: clamp(32px, 45px, 6vw);
+  line-height: 124%;
   letter-spacing: -0.016em;
   color: #141313;
 }
@@ -95,7 +95,7 @@ section {
   margin: 0 auto
 }
 
-.item-details {
+.container-item {
   width: calc(((100%/3)*2) - 48px);
   display: flex;
   flex-direction: column;
@@ -247,7 +247,7 @@ button.default {
 
 /* OUTPUT */
 
-.output-container {
+.container-output {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -357,6 +357,12 @@ button.default {
 
 @media only screen and (max-width: 720px) {
 
-  
+  .calculator {
+    flex-direction: column;
+  }
+
+  .container-item, .container-output {
+    width: 100%;
+  }
 
 }
