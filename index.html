@@ -19,7 +19,7 @@
   <section class="calculator">
     <div class="container-item">
       <h2>Item details</h2>
-      <div class="calculator-inputs" id="calculator-form">
+      <form class="calculator-inputs" id="form-calculator" onsubmit="">
         <fieldset id="input-product-type" class="product-types">
           <legend>Select Product Type</legend>
           <div class="product-type">
@@ -67,9 +67,9 @@
       </div>
       <div class="row button-row">
         <button class="reset" id="button-reset">Reset</button>
-        <button class="default" id="button-calculate" onclick="calculateDepreciation()">Calculate</button>
+        <input type="submit" class="default" id="button-calculate" value="Calculate">
       </div>
-    </div>
+    </form>
 
   </div>
   <div class="container-output">

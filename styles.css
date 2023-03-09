@@ -225,7 +225,7 @@ input:disabled {
   width: calc(100% - 56px);
 }
 
-button {
+button, input[type="submit"]{
   padding: 16px;
   border: 1.5px solid #D9D4CE;
   background: none;
@@ -233,11 +233,13 @@ button {
   font-weight: 600;
 }
 
-button.default {
+input[type="submit"].default {
   background: #141313;
   color: #F2F0ED;
   width: 100%;
   max-width: calc(50% - 8px);
+  justify-content: center;
+  border: none;
 }
 
 .button-row {
