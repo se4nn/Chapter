@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Chapter</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel='shortcut icon' href='./favicon.png' type='image/png'/ >
+  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+  <script src="./scripts.js"></script>
+</head>
+<body>
+  <section class="hero">
+    <h1>Monthly Cost</h1>
+    <p>xxxxxxxxx</p>
+  </section>
+  <section class="calculator">
+    <div class="item-details">
+      <h2>Item details</h2>
+      <div class="calculator-inputs" id="calculator-form">
+        <fieldset id="input-product-type" class="product-types">
+          <legend>Select Product Type</legend>
+          <div class="product-type">
+            <input type="radio" id="type-bed" name="product-type" value="bed">
+            <label for="type-bed">Bed</label>
+          </div>
+          <div class="product-type">
+            <input type="radio" id="type-cabinet" name="product-type" value="type-cabinet">
+            <label for="type-cabinet">Cabinet</label>
+          </div>
+          <div class="product-type">
+            <input type="radio" id="type-chair" name="product-type" value="type-chair">
+            <label for="type-chair">Chair</label>
+          </div>
+          <div class="product-type">
+            <input type="radio" id="type-light" name="product-type" value="type-light">
+            <label for="type-light">Light</label>
+          </div>
+          <div class="product-type">
+            <input type="radio" id="type-sofa" name="product-type" value="type-sofa">
+            <label for="type-sofa">Sofa</label>
+          </div>
+          <div class="product-type">
+            <input type="radio" id="type-table" name="product-type" value="type-table">
+            <label for="type-table">Table</label>
+          </div>
+      </fieldset>
+      <div class="row">
+        <fieldset>
+          <legend>Item Name</legend>
+          <input type="text" id="input-product-name">
+        </fieldset>
+      </div>
+      <div class="row">
+        <fieldset class="RRP">
+          <legend>RRP</legend>
+          <span class="currency-symbol">&#163;</span>
+          <input type="currency" id="input-rrp">
+        </fieldset>
+        <fieldset class="lifespan">
+          <legend>Lifespan</legend>
+          <span class="estimated">Estimated</span>
+          <input type="text" id="input-lifespan" disabled>
+        </fieldset>
+      </div>
+      <div class="row button-row">
+        <button class="reset" id="button-reset">Reset</button>
+        <button class="default" id="button-calculate" onclick="calculateDepreciation()">Calculate</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="output-container">
+    <h2>Rental Summary</h2>
+    <div class="output rental-period">
+      <h3>Rental Period</h3>
+      <img src="./Icons/chevrons-up-down.svg" class="dropdown">
+      <select id="input-rental-period">
+        <option value="6">6 Months</option>
+        <option value="12">12 Months</option>
+        <option value="24">24 Months</option>
+        <option value="36">36 Months</option>
+        <option value="48">48 Months</option>
+      </select>
+    </div>
+    <div class="output">
+      <div class="row">
+        <p>Total Return</p>
+        <p class="output-figure" id="output-total-return">xxx</p>
+      </div>
+      <div class="row">
+        <p>Refurbishment Cost</p>
+        <p class="output-figure" id="output-refurbishment">xxx</p>
+      </div>
+      <div class="row">
+        <p>Insurance</p>
+        <p class="output-figure" id="output-insurance">xxx</p>
+      </div>
+      <div class="row">
+        <p>Chapter Fee</p>
+        <p class="output-figure" id="output-chapter-fee">xxx</p>
+      </div>
+    </div>
+    <div class="monthly-cost">
+      <div class="row">
+        <h3>Monthly Cost</h3>
+        <h3 id="output-monthly-cost">XXX</h3>
+      </div>
+      <h5>For <span id="output-rental-period">24 Months</span></h5>
+    </div>
+  </div>
+</section>
+  
+</body>
