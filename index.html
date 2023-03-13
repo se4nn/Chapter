@@ -20,30 +20,30 @@
     <div class="container-item">
       <h2>Item details</h2>
       <form class="calculator-inputs" id="form-calculator" onsubmit="">
-        <fieldset id="input-product-type" class="product-types">
+        <fieldset class="product-types">
           <legend>Select Product Type</legend>
           <div class="product-type">
-            <input type="radio" id="type-bed" name="product-type" value="bed">
+            <input type="radio" id="type-bed" name="product-type" value="type-bed" class="input-product-type" checked>
             <label for="type-bed">Bed</label>
           </div>
           <div class="product-type">
-            <input type="radio" id="type-cabinet" name="product-type" value="type-cabinet">
+            <input type="radio" id="type-cabinet" name="product-type" value="type-cabinet" class="input-product-type">
             <label for="type-cabinet">Cabinet</label>
           </div>
           <div class="product-type">
-            <input type="radio" id="type-chair" name="product-type" value="type-chair">
+            <input type="radio" id="type-chair" name="product-type" value="type-chair" class="input-product-type">
             <label for="type-chair">Chair</label>
           </div>
           <div class="product-type">
-            <input type="radio" id="type-light" name="product-type" value="type-light">
+            <input type="radio" id="type-light" name="product-type" value="type-light" class="input-product-type">
             <label for="type-light">Light</label>
           </div>
           <div class="product-type">
-            <input type="radio" id="type-sofa" name="product-type" value="type-sofa">
+            <input type="radio" id="type-sofa" name="product-type" value="type-sofa" class="input-product-type">
             <label for="type-sofa">Sofa</label>
           </div>
           <div class="product-type">
-            <input type="radio" id="type-table" name="product-type" value="type-table">
+            <input type="radio" id="type-table" name="product-type" value="type-table" class="input-product-type">
             <label for="type-table">Table</label>
           </div>
       </fieldset>
@@ -62,7 +62,7 @@
         <fieldset class="lifespan">
           <legend>Lifespan</legend>
           <span class="estimated">Estimated</span>
-          <input type="text" id="input-lifespan" disabled>
+          <input type="number" id="input-lifespan" value=5 disabled>
         </fieldset>
       </div>
       <div class="row button-row">
@@ -80,7 +80,7 @@
         <img src="./Icons/chevrons-up-down.svg" class="dropdown">
         <select id="input-rental-period">
           <option value="6">6 Months</option>
-          <option value="12">12 Months</option>
+          <option value="12" selected>12 Months</option>
           <option value="24">24 Months</option>
           <option value="36">36 Months</option>
           <option value="48">48 Months</option>
@@ -110,7 +110,7 @@
         <h3>Monthly Cost</h3>
         <h3 id="output-monthly-cost">XXX</h3>
       </div>
-      <h5>For <span id="output-rental-period">24 Months</span></h5>
+      <h5>For <span id="output-rental-period">12 Months</span></h5>
     </div>
   </div>
 </section>
