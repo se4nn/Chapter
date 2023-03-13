@@ -29,8 +29,6 @@ productTypeInput.on("input", function() {
 
 const calculateDepreciation = (cost=10000, salvage=0, months=60, startPeriod=0, endPeriod=6) => {
 
-  preventDefault()
-
     // Chapter costs
     let discount = 0.2;
     let refurbishmentFee = 0.1;

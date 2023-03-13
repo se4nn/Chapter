@@ -233,7 +233,7 @@ button, input[type="submit"]{
   font-weight: 600;
 }
 
-button.default {
+input[type="submit"].default {
   background: #141313;
   color: #F2F0ED;
   width: 100%;
